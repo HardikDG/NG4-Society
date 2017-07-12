@@ -48,7 +48,14 @@ export class SignupComponent implements OnInit {
 
     let params = {
       'email': this.signupForm.get('userData.email').value,
-      'password:': this.signupForm.get('userData.password').value
+      'firstname': this.signupForm.get('userData.firstname').value,
+      'lastname': this.signupForm.get('userData.lastname').value,
+      'bdate': this.signupForm.get('userData.bdate').value,
+      'mobile': this.signupForm.get('userData.mobile').value,
+      'password:': this.signupForm.get('userData.password').value,
+      'purchasedate:': this.signupForm.get('flatData.purchasedate').value,
+      'flatblock:': this.signupForm.get('flatData.flatblock').value,
+      'flatno:': this.signupForm.get('flatData.flatno').value,
     }
     this.wsHelper
       .postRequest(AppConstants.SIGNUP, params)
