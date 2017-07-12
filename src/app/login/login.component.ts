@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
       result => {
         this.utiltyHelper.printLog("login " + JSON.stringify(result));
         this.authHelper.setUserAuth(result);
-         this.router.navigate(['/signup']);
+        //  this.router.navigate(['/signup']);
          alert("Login successful");
       },
       error => alert("Some error occured")
