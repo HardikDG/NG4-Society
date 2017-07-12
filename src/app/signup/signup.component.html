@@ -1,0 +1,62 @@
+<div>
+    Signup
+    <div>
+        <div>
+            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                <div formGroupName="userData">
+                    <div>
+                        <label>First Name</label>
+                        <input type="text" id="fname" formControlName="firstname">
+                        <span *ngIf="!signupForm.get('userData.firstname').valid && signupForm.get('userData.firstname').touched">
+                        <span *ngIf="signupForm.get('userData.firstname').errors['required']">This field is required!</span>
+                        </span>
+                    </div>
+                    <div>
+                        <label>Last Name</label>
+                        <input type="text" id="lname" formControlName="lastname">
+                        <span *ngIf="!signupForm.get('userData.lastname').valid && signupForm.get('userData.lastname').touched">This field is required!</span>
+                    </div>
+                    <div>
+                        <label>Password</label>
+                        <input type="text" id="pass" formControlName="password">
+                        <span *ngIf="!signupForm.get('userData.password').valid && signupForm.get('userData.password').touched">This field is required!</span>
+                    </div>
+                    <div>
+                        <label>Confirm Password</label>
+                        <input type="text" id="cpassword" formControlName="cpassword">
+                        <span *ngIf="!signupForm.get('userData.cpassword').valid && signupForm.get('userData.cpassword').touched">This field is required!</span>
+                    </div>
+                    <div>
+                        <label>Birthdate</label>
+                        <input type="date" id="bdate" formControlName="bdate">
+                    </div>
+                    <div>
+                        <label>Mobile Number</label>
+                        <input type="text" id="mobile" formControlName="mobile">
+                        <span *ngIf="!signupForm.get('userData.mobile').valid && signupForm.get('userData.mobile').touched">This field is required!</span>
+                    </div>
+                </div>
+                <div formGroupName="flatData">
+                    <div>
+                        <label>Flat Purchase Date</label>
+                        <input type="date" id="purchasedate" formControlName="purchasedate">
+                        <span *ngIf="!signupForm.get('flatData.purchasedate').valid && signupForm.get('flatData.purchasedate').touched">This field is required!</span>
+                    </div>
+                    <div>
+                        <label>Flat block</label>
+                        <input type="text" id="flatblock" formControlName="flatblock">
+                        <span *ngIf="!signupForm.get('flatData.flatblock').valid && signupForm.get('flatData.flatblock').touched">This field is required!</span>
+                    </div>
+                    <div>
+                        <label>Flat Number</label>
+                        <input type="text" id="flatno" formControlName="flatno">
+                        <span *ngIf="!signupForm.get('flatData.flatno').valid && signupForm.get('flatData.flatno').touched">This field is required!</span>
+                    </div>
+                </div>
+                <input type="checkbox" name="agreeement" value="agreement">Agree to terms and condition
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
