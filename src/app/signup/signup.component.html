@@ -8,7 +8,6 @@
                         <label>First Name</label>
                         <input type="text" id="fname" formControlName="firstname">
                         <span *ngIf="!signupForm.get('userData.firstname').valid && signupForm.get('userData.firstname').touched">
-                        <span *ngIf="signupForm.get('userData.firstname').errors['required']">This field is required!</span>
                         </span>
                     </div>
                     <div>
@@ -18,12 +17,12 @@
                     </div>
                     <div>
                         <label>Password</label>
-                        <input type="text" id="pass" formControlName="password">
+                        <input type="password" name="password" id="pass" formControlName="password">
                         <span *ngIf="!signupForm.get('userData.password').valid && signupForm.get('userData.password').touched">This field is required!</span>
                     </div>
                     <div>
                         <label>Confirm Password</label>
-                        <input type="text" id="cpassword" formControlName="cpassword">
+                        <input type="password" name="password" formControlName="cpassword">
                         <span *ngIf="!signupForm.get('userData.cpassword').valid && signupForm.get('userData.cpassword').touched">This field is required!</span>
                     </div>
                     <div>
@@ -53,8 +52,7 @@
                         <span *ngIf="!signupForm.get('flatData.flatno').valid && signupForm.get('flatData.flatno').touched">This field is required!</span>
                     </div>
                 </div>
-                <input type="checkbox" name="agreeement" value="agreement">Agree to terms and condition
-
+                <input type="checkbox" name="agreement" formControlName="agreement" value="1"> Agree to terms and condition
                 <button type="submit">Submit</button>
             </form>
         </div>
